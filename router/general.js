@@ -78,19 +78,6 @@ public_users.get('/', async function (req, res) {
     });
 });
 
-// Function to search for a book by ISBN using promises
-const searchBookByISBN = (isbn) => {
-    return new Promise((resolve, reject) => {
-        // Check if the book with the given ISBN exists
-        if (books[isbn]) {
-            resolve(books[isbn]); // Resolve with book details if found
-        }
-        else {
-            reject(new Error("Book not found")); // Reject with error if not found
-        }
-    });
-};
-
 // Get book details based on ISBN
 public_users.get('/isbn/:isbn', async function (req, res) {
   const isbn = req.params.isbn;
