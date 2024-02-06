@@ -95,7 +95,7 @@ const searchBookByISBN = (isbn) => {
 public_users.get('/isbn/:isbn', async function (req, res) {
   const isbn = req.params.isbn;
   try{
-    const bookDetails = await searchBookByISBN(isbn);
+    const bookDetails = await getBookByISBN(isbn);
     return res.status(200).json({
       message: "Book ISBN retrieved successfully",
       book: bookDetails,
